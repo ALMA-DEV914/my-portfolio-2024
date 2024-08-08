@@ -6,6 +6,7 @@ import {
   ListItem,
   Divider,
   Box,
+
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
@@ -76,7 +77,7 @@ const Experience = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Box sx={{ background:"#F9F9F9", padding:'5px'}}>
+              <Box sx={{ background: "#F9F9F9", padding: "5px" }}>
                 <Typography variant="h5" component="div" sx={{ mb: 1 }}>
                   {experience.title}
                 </Typography>
@@ -101,4 +102,3 @@ const Experience = () => {
 };
 
 export default Experience;
-

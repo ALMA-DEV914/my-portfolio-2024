@@ -10,7 +10,6 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import theme from './theme';
 
-
 const App = () => {
   return (
     <ThemeProvider theme={theme}>

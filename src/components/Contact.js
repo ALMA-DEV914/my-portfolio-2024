@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography, TextField, Button, Box } from "@mui/material";
-import { ReactComponent as MemeSVG } from "../assets/meme1.svg";
+import { ReactComponent as MemeSVG } from "../assets/meme2.svg";
 
 const Contact = () => {
   return (
