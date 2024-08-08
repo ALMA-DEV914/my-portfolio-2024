@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import image2 from "../assets/me.png"
+import image2 from "../assets/me.png";
+import WavyLine from "../assets/line.svg";
 
 const MotionBox = motion(Box);
 
@@ -31,6 +32,13 @@ const About = () => {
           </Typography>
         </Box>
       </Box>
+
+      {/* Wavy Line Divider */}
+      <Box sx={{ width: '100%', mt: 4 }}>
+        <img src={WavyLine} alt="Wavy Line Divider" style={{ width: '100%', height: 'auto' }} />
+      </Box>
+
+      {/* You can add more content below the divider if needed */}
     </Container>
   );
 };

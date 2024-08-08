@@ -16,6 +16,11 @@ const theme = createTheme({
     h5: {
       fontSize: '1.5rem',
     },
+    
+      h1: {
+        fontFamily: 'Raleway, sans-serif',
+        fontWeight: 600, // Adjust weight if necessary
+      },
   },
 });
 

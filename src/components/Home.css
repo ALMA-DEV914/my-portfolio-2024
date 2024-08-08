@@ -1,26 +1,30 @@
 .split-container {
-    display: flex;
-    position: relative;
-    height: 100vh;
-  }
+  display: flex;
+  position: relative;
+  height: calc(100vh - 100px); /* Adjust height to account for the 50px margin on top and bottom */
+  margin: 50px 0;
+}
+
+.left-side {
+  background-color: #0d47a1; /* Primary Color */
+  width: 60%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   
-  .left-side {
-    background-color: #0D47A1; /* Primary Color */
-    width: 60%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
-  
-  .right-side {
-    background-color: #E3F2FD; /* Secondary Color */
-    width: 40%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-  }
-  
+}
+
+.right-side {
+  background-color: #e3f2fd; /* Secondary Color */
+  width: 40%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.profile-image{
+    width: 100%;
+}

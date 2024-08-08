@@ -2,22 +2,22 @@ import React from "react";
 import { AppBar, Toolbar, Box, Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png"; // Import your logo image
+import logo from "../assets/logo2.png"; // Import your logo image
 import "./Header.css";
 
 const MotionBox = motion(Box);
 
 const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{background:'#2C6B58' }} >
       <Container>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <MotionBox
             component="img"
             src={logo}
             alt="My Logo"
             className="logo"
-            sx={{ width: { xs: '150px', md: '200px' }, height: 'auto' }}
+            sx={{ width: { xs: '80px', md: '100px' }, height: 'auto', padding:'4px' }}
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}

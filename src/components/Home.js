@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Typography, Box, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import './Home.css'; // Import the CSS file for custom styles
-import image1 from "../assets/computer.jpg"
+import image1 from "../assets/computer.jpg";
+import { Link } from 'react-router-dom';
 
 const MotionBox = motion(Box);
 
@@ -12,7 +13,7 @@ const Home = () => {
       <Box className="split-container">
         <MotionBox
           className="left-side"
-          sx={{ position: 'relative', height: '100%' }}
+          sx={{ position: 'relative', height: '100%',background:'#F4F1E6'  }}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -32,18 +33,32 @@ const Home = () => {
         </MotionBox>
         <MotionBox
           className="right-side"
-          sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+          sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: "#F9F9F9", alignItems: 'center', justifyContent: 'center' }}
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <Typography variant="h1" color="#2C6B58" sx={{ align: 'center', }}>
-            Welcome to My Portfolio
-          </Typography>
+          <Typography 
+  variant="h1" 
+  color="#4A4A4A" 
+  sx={{ 
+    textAlign: 'center', 
+    fontWeight: 'bold', 
+    fontStyle: 'Roboto ' 
+  }}
+>
+  Welcome to My Portfolio
+</Typography><br></br>
           <Typography variant="h5" color="black" align="center">
             I am a passionate developer with a knack for creating stunning web experiences. Explore my work and get in touch!
           </Typography>
-          <Button variant="contained" color="primary" size="large" sx={{ mt: 2 }}>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ mt: 2, background: '#8D6E63' }}
+            component={Link}
+            to="/contact"
+          >
             Contact Me
           </Button>
         </MotionBox>
