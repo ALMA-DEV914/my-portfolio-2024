@@ -30,14 +30,15 @@ const Footer = () => {
             <Typography variant="h6" sx={{ mb: 1 }}>
               Contact Information
             </Typography>
-            <Typography variant="body2">
-              Email: <Link href="mailto:your.email@example.com" color="inherit">almabraun40@gmail.com</Link>
+            <Typography variant="body2"><i className="fas fa-envelope fa-2x"></i>
+              {" "} <Link href="mailto:almabraun40@gmail.com" color="inherit">almabraun40@gmail.com</Link>
             </Typography>
             <Typography variant="body2">
-              Phone: <Link href="tel:+1234567890" color="inherit">+1 775 742 5989</Link>
+            <i className="fas fa-phone fa-2x"></i>{" "} <Link href="tel:+1234567890" color="inherit">+1 775 742 5989</Link>
             </Typography>
             <Typography variant="body2">
-              Location: Reno, Nevada USA 89521
+            <i className="fas fa-home fa-2x"></i>
+              {" "} Reno, Nevada USA 89521
             </Typography>
           </Box>
           
@@ -62,6 +63,17 @@ const Footer = () => {
             <Typography variant="body2" sx={{ mt: 1 }}>
               Made with React, Material-UI, and Framer Motion
             </Typography>
+            
+            {/* Social Media Links */}
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
+              <Link href="https://github.com/your-username" color="inherit" target="_blank" rel="noopener">
+                <i className="fab fa-github fa-2x"></i>
+              </Link>
+        
+              <Link href="https://linkedin.com/in/your-username" color="inherit" target="_blank" rel="noopener">
+                <i className="fab fa-linkedin fa-2x"></i>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Container>
