@@ -66,11 +66,11 @@ const Footer = () => {
             
             {/* Social Media Links */}
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
-              <Link href="https://github.com/your-username" color="inherit" target="_blank" rel="noopener">
+              <Link href="https://github.com/ALMA-DEV914" color="inherit" target="_blank" rel="noopener">
                 <i className="fab fa-github fa-2x"></i>
               </Link>
         
-              <Link href="https://linkedin.com/in/your-username" color="inherit" target="_blank" rel="noopener">
+              <Link href="https://www.linkedin.com/in/alma-braun-1b11731aa/" color="inherit" target="_blank" rel="noopener">
                 <i className="fab fa-linkedin fa-2x"></i>
               </Link>
             </Box>

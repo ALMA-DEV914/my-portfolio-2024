@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import image2 from "../assets/me.png";
 import WavyLine from "../assets/line.svg";
 import "./About.css";
+import SkillsPieChart from "./SkillsPieChart";
 
 const MotionBox = motion(Box);
 
@@ -61,11 +62,11 @@ const About = () => {
           style={{ width: "100%", height: "auto" }}
         />
       </Box>
-      {/* Skills Section */}
-      <Box
+      
+     {/* Skills Section */}
+     <Box
         sx={{
           mt: 4,
-          background: "#F9F9F9",
           padding: "15px",
           borderRadius: "8px",
         }}
@@ -73,37 +74,7 @@ const About = () => {
         <Typography variant="h2" gutterBottom>
           Skills
         </Typography>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          {skills.map((skill) => (
-            <Box
-              key={skill.name}
-              sx={{ display: "flex", alignItems: "center", gap: 2 }}
-            >
-              <Typography variant="body1" sx={{ flex: 1 }}>
-                {skill.name}
-              </Typography>
-              <Box
-                sx={{
-                  flex: 2,
-                  height: 8,
-                  width: "100%",
-                  background: "#E0E0E0",
-                  borderRadius: 4,
-                }}
-              >
-                <Box
-                  sx={{
-                    height: "100%",
-                    width: skill.level,
-                    background: "#76c7c0",
-                    borderRadius: 4,
-                  }}
-                />
-              </Box>
-              <Typography variant="body2">{skill.level}</Typography>
-            </Box>
-          ))}
-        </Box>
+        <SkillsPieChart skills={skills} />
       </Box>
     </Container>
   );

@@ -82,7 +82,7 @@ const Projects = () => {
           <Grid item xs={12} sm={6} md={4} key={index}>
             <MotionCard
               elevation={3}
-              sx={{ height: "100%" }}
+              sx={{ height: "100%", background:"#F9F9F9"}}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}

@@ -70,14 +70,18 @@ const Experience = () => {
         {experiences.map((experience, index) => (
           <React.Fragment key={index}>
             <StyledListItem>
-              <Box>
+              <Box sx={{ background:"#F9F9F9", padding:'5px'}}>
                 <Typography variant="h5" component="div" sx={{ mb: 1 }}>
                   {experience.title}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
                   {experience.description}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" sx={{ mt: 1 }}>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  sx={{ mt: 1 }}
+                >
                   {experience.date}
                 </Typography>
               </Box>
