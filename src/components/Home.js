@@ -54,7 +54,7 @@ const Home = () => {
             color="#4A4A4A"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: '2rem', sm: '3rem' }, // Responsive font size
+              fontSize: { xs: "2rem", sm: "3rem" }, // Responsive font size
             }}
           >
             Welcome to My Portfolio
@@ -66,8 +66,15 @@ const Home = () => {
           </Typography>
           <Button
             variant="contained"
+            className="buttons"
             size="large"
-            sx={{ mt: 2, background: "#8D6E63" }}
+            sx={{
+              mt: 2,
+              background: "#8D6E63",
+              "&:hover": {
+                background: "#6D4C41", // Hover background color
+              },
+            }}
             component={Link}
             to="/contact"
           >

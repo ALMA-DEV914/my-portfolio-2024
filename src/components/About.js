@@ -65,7 +65,7 @@ const About = () => {
       <Box
         sx={{
           mt: 4,
-          background: "#F4F1E6",
+          background: "#F9F9F9",
           padding: "15px",
           borderRadius: "8px",
         }}

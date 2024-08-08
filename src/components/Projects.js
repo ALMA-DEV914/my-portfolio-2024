@@ -21,37 +21,43 @@ const MotionCard = motion(Card);
 const projects = [
   {
     title: "LOOKBOOK",
-    description: "Lookbook is more than just a tool—it’s a dedicated resource for individuals living with Alzheimer’s, their families, and caregivers. Our mission is to provide valuable insights into cognitive health while fostering a supportive environment for memory enhancement and overall well-being. Built with the MERN stack (MongoDB, Express.js, React, and Node.js)",
+    description:
+      "Lookbook is more than just a tool—it’s a dedicated resource for individuals living with Alzheimer’s, their families, and caregivers. Our mission is to provide valuable insights into cognitive health while fostering a supportive environment for memory enhancement and overall well-being. Built with the MERN stack (MongoDB, Express.js, React, and Node.js)",
     image: project1,
     link: "#",
   },
   {
     title: "ECOMMERCE SITE",
-    description: "It is an app that uses a Redux provider that passes reducers to a Redux store, extracts data, and dispatch actions instead of using the Context API. Tools and technologies are : MONGODB, REDUX, REACT, EXPRESS, CSS, Paypal(payment method) and NODE.",
+    description:
+      "It is an app that uses a Redux provider that passes reducers to a Redux store, extracts data, and dispatch actions instead of using the Context API. Tools and technologies are : MONGODB, REDUX, REACT, EXPRESS, CSS, Paypal(payment method) and NODE.",
     image: project2,
     link: "#",
   },
   {
     title: "BLOG EXERCISE",
-    description: "It is a React application where I used REST API to fetch data from third party API source. It features the different cardio exercises.",
+    description:
+      "It is a React application where I used REST API to fetch data from third party API source. It features the different cardio exercises.",
     image: project3,
     link: "#",
   },
   {
     title: "WEATHER DASHBOARD",
-    description: "Built with Javascript, Html, CSS, MongoDB, PWA, Node packages and Bootstrap. I used third party api to fetch the data information. This display the current forecast and the 5 days weather condition ahead.",
+    description:
+      "Built with Javascript, Html, CSS, MongoDB, PWA, Node packages and Bootstrap. I used third party api to fetch the data information. This display the current forecast and the 5 days weather condition ahead.",
     image: project4,
     link: "#",
   },
   {
     title: "MEMORIES-ON-THE-GO",
-    description: "Built with HTML, CSS, Javascript, Third party API, Bootstrap/Mediaqueries, Git/Github - We used this application to work together or collaborate in building this project. This app aim to give user an idea about a certain movies where they can see the rating and the plot of the stories to help them plan their next movie to watch",
+    description:
+      "Built with HTML, CSS, Javascript, Third party API, Bootstrap/Mediaqueries, Git/Github - We used this application to work together or collaborate in building this project. This app aim to give user an idea about a certain movies where they can see the rating and the plot of the stories to help them plan their next movie to watch",
     image: project5,
     link: "#",
   },
   {
     title: "QUIZ PUZZLE",
-    description: "This application used HTML, Javascript and Web API. This used a local storage to store and retrieved data. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that I program.",
+    description:
+      "This application used HTML, Javascript and Web API. This used a local storage to store and retrieved data. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that I program.",
     image: project6,
     link: "#",
   },
@@ -98,7 +104,13 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   variant="contained"
-                  sx={{ mt: 2, background: "#8D6E63" }}
+                  sx={{
+                    mt: 2,
+                    background: "#8D6E63",
+                    "&:hover": {
+                      background: "#6D4C41", // Hover background color
+                    },
+                  }}
                 >
                   Learn More
                 </Button>
