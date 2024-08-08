@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container, Link } from '@mui/material';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo2.png'; // Import your logo image
+import logo from '../assets/logo3.png'; // Import your logo image
 import './Footer.css'; // Import the CSS file for custom styles
 
 const MotionBox = motion(Box);
@@ -30,14 +30,15 @@ const Footer = () => {
             <Typography variant="h6" sx={{ mb: 1 }}>
               Contact Information
             </Typography>
-            <Typography variant="body2"><i className="fas fa-envelope fa-2x"></i>
+            <Typography variant="body2">
+              <i className="fas fa-envelope fa-2x"></i>
               {" "} <Link href="mailto:almabraun40@gmail.com" color="inherit">almabraun40@gmail.com</Link>
             </Typography>
             <Typography variant="body2">
-            <i className="fas fa-phone fa-2x"></i>{" "} <Link href="tel:+1234567890" color="inherit">+1 775 742 5989</Link>
+              <i className="fas fa-phone fa-2x"></i>{" "} <Link href="tel:+1234567890" color="inherit">+1 775 742 5989</Link>
             </Typography>
             <Typography variant="body2">
-            <i className="fas fa-home fa-2x"></i>
+              <i className="fas fa-home fa-2x"></i>
               {" "} Reno, Nevada USA 89521
             </Typography>
           </Box>
@@ -46,11 +47,12 @@ const Footer = () => {
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <MotionBox
               component="img"
+              className='footer-logo'
               src={logo}
               alt="Logo"
               sx={{ 
                 borderRadius: '8px',
-                width: { xs: '80px', md: '100px' }, // Adjust width as needed
+                width: { xs: '30px', md: '50px' }, // Adjust width as needed
                 height: 'auto' // Maintain aspect ratio
               }}
               initial={{ scale: 1 }}
@@ -67,11 +69,11 @@ const Footer = () => {
             {/* Social Media Links */}
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
               <Link href="https://github.com/ALMA-DEV914" color="inherit" target="_blank" rel="noopener">
-                <i className="fab fa-github fa-2x"></i>
+                <i className="fab fa-github fa-2x" aria-label="GitHub"></i>
               </Link>
         
               <Link href="https://www.linkedin.com/in/alma-braun-1b11731aa/" color="inherit" target="_blank" rel="noopener">
-                <i className="fab fa-linkedin fa-2x"></i>
+                <i className="fab fa-linkedin fa-2x" aria-label="LinkedIn"></i>
               </Link>
             </Box>
           </Box>

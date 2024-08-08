@@ -61,8 +61,7 @@ const Home = () => {
           </Typography>
           <br />
           <Typography variant="h5" color="black">
-            I am a passionate developer with a knack for creating stunning web
-            experiences. Explore my work and get in touch!
+          I am a passionate developer with a knack for creating stunning web experiences. Explore my work and feel free to get in touch!
           </Typography>
           <Button
             variant="contained"

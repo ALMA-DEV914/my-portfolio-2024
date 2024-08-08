@@ -8,6 +8,7 @@ import {
   Box,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -69,7 +70,12 @@ const Experience = () => {
       <List>
         {experiences.map((experience, index) => (
           <React.Fragment key={index}>
-            <StyledListItem>
+            <StyledListItem
+              component={motion.div}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Box sx={{ background:"#F9F9F9", padding:'5px'}}>
                 <Typography variant="h5" component="div" sx={{ mb: 1 }}>
                   {experience.title}
@@ -95,3 +101,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

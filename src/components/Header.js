@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AppBar, Toolbar, Box, Button, Container, IconButton, Menu, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/logo2.png"; // Import your logo image
+import logo from "../assets/logo3.png"; // Import your logo image
 import MenuIcon from '@mui/icons-material/Menu'; // Import MenuIcon
 import "./Header.css";
 

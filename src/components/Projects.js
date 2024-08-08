@@ -1,121 +1,123 @@
-import React from "react";
-import {
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  Grid,
-  CardMedia,
-  Button,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import project1 from "../assets/lookbook.png";
-import project2 from "../assets/ecommerce.png";
-import project3 from "../assets/blog.png";
-import project4 from "../assets/weather.png";
-import project5 from "../assets/frontendmovie.png";
-import project6 from "../assets/quiz.png";
+import React from 'react';
+import { Container, Typography, Grid, Card, CardContent, CardMedia, Button, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import projetc1 from "../assets/lookbook.png";
+import projetc2 from "../assets/ecommerce.png";
+import projetc3 from "../assets/blog.png";
+import projetc4 from "../assets/weather.png";
+import projetc5 from "../assets/frontendmovie.png";
+import projetc6 from "../assets/quiz.png";
 
-const MotionCard = motion(Card);
-
+// Dummy project data
 const projects = [
   {
-    title: "LOOKBOOK",
-    description:
-      "Lookbook is more than just a tool—it’s a dedicated resource for individuals living with Alzheimer’s, their families, and caregivers. Our mission is to provide valuable insights into cognitive health while fostering a supportive environment for memory enhancement and overall well-being. Built with the MERN stack (MongoDB, Express.js, React, and Node.js)",
-    image: project1,
-    link: "#",
+    title: 'LOOKBOOK',
+    description: "This website is designed to help individuals test their cognitive functions, specifically targeting Alzheimer's patients. It leverages modern web technologies such as React.js for an interactive user interface, Node.js with Express.js for robust backend support, and MongoDB with Mongoose for secure data management. User security is maintained with Bcrypt for password hashing and JWT (jsonwebtoken) for authentication.",
+    image: projetc1,
+    link: '/projects/1'
   },
   {
-    title: "ECOMMERCE SITE",
-    description:
-      "It is an app that uses a Redux provider that passes reducers to a Redux store, extracts data, and dispatch actions instead of using the Context API. Tools and technologies are : MONGODB, REDUX, REACT, EXPRESS, CSS, Paypal(payment method) and NODE.",
-    image: project2,
-    link: "#",
+    title: 'Ecommerce Site',
+    description: 'This eCommerce website is powered by a robust technology stack, including MongoDB for database management, Redux for state management, and React for a dynamic frontend. The backend is built with Node.js and Express, ensuring efficient server-side operations. The app uses Redux to manage state, extract data, and dispatch actions, providing a seamless alternative to the Context API. Styling is handled with CSS, and payments are processed securely via PayPal.',
+    image: projetc2,
+    link: '/projects/2'
   },
   {
-    title: "BLOG EXERCISE",
-    description:
-      "It is a React application where I used REST API to fetch data from third party API source. It features the different cardio exercises.",
-    image: project3,
-    link: "#",
+    title: 'Blog Site',
+    description: 'This blog website is a React application that leverages a REST API to fetch data from a third-party API source. It features a variety of cardio exercises, providing users with comprehensive information and resources for their fitness routines.',
+    image: projetc3,
+    link: '/projects/3'
   },
   {
-    title: "WEATHER DASHBOARD",
-    description:
-      "Built with Javascript, Html, CSS, MongoDB, PWA, Node packages and Bootstrap. I used third party api to fetch the data information. This display the current forecast and the 5 days weather condition ahead.",
-    image: project4,
-    link: "#",
+    title: 'Project Three',
+    description: 'This application provides users with comprehensive details about movies to help them plan their next watch. Built using HTML, CSS, JavaScript, and integrated with third-party APIs, it displays movie ratings and plot summaries. The app utilizes Bootstrap and media queries for responsive design, and Git/GitHub for version control. It is designed to offer users an intuitive interface where they can easily view movie information, including ratings and plot summaries, to make informed decisions about their movie choices.',
+    image: projetc4,
+    link: '/projects/3'
   },
   {
-    title: "MEMORIES-ON-THE-GO",
-    description:
-      "Built with HTML, CSS, Javascript, Third party API, Bootstrap/Mediaqueries, Git/Github - We used this application to work together or collaborate in building this project. This app aim to give user an idea about a certain movies where they can see the rating and the plot of the stories to help them plan their next movie to watch",
-    image: project5,
-    link: "#",
+    title: 'Movie Review',
+    description: 'This Weather Dashboard provides users with up-to-date weather information, including the current forecast and a 5-day weather outlook. Built with JavaScript, HTML, and CSS, and utilizing MongoDB, Node packages, and Bootstrap, this application fetches weather data using a third-party API. The Progressive Web App (PWA) features enhance user experience by offering offline capabilities and a responsive design. The dashboard is designed to help users easily access and understand weather conditions to plan their activities effectively.',
+    image: projetc5,
+    link: '/projects/3'
   },
   {
-    title: "QUIZ PUZZLE",
-    description:
-      "This application used HTML, Javascript and Web API. This used a local storage to store and retrieved data. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that I program.",
-    image: project6,
-    link: "#",
-  },
+    title: 'Quiz Puzzle',
+    description: 'This Quiz Challenge application is built with HTML, JavaScript, and Web API. It leverages local storage to save and retrieve user data, allowing for a seamless quiz experience. The application runs directly in the browser and features dynamically updated HTML and CSS, which are controlled through JavaScript. This ensures an interactive and engaging user experience as users progress through the quiz.',
+    image: projetc6,
+    link: '/projects/3'
+  }
 ];
 
 const Projects = () => {
   return (
-    <Container maxWidth="md" sx={{ py: 4, mt: "50px", mb: "50px" }}>
+    <Container maxWidth="lg" sx={{ py: 4, mt: "50px", mb: "50px" }}>
       <Typography
         variant="h1"
+        color="#4A4A4A"
         sx={{
           fontWeight: "bold",
-          fontSize: { xs: "2rem", sm: "3rem" }, // Responsive font size
+          fontSize: { xs: "2rem", sm: "3rem" },
+          textAlign: "center",
+          mb: 4
         }}
-        gutterBottom
-        color="#4A4A4A"
       >
-        Projects
+        My Projects
       </Typography>
       <Grid container spacing={4}>
         {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <MotionCard
-              elevation={3}
-              sx={{ height: "100%", background:"#F9F9F9"}}
+          <Grid item xs={12} sm={6} md={4} key={index} >
+            <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <CardMedia
-                component="img"
-                height="140"
-                image={project.image}
-                alt={project.title}
-              />
-              <CardContent>
-                <Typography variant="h5" gutterBottom>
-                  {project.title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  {project.description}
-                </Typography>
-                <Button
-                  href={project.link}
-                  target="_blank"
-                  variant="contained"
+              <Card
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={project.image}
+                  alt={project.title}
+                />
+                <CardContent
                   sx={{
-                    mt: 2,
-                    background: "#8D6E63",
-                    "&:hover": {
-                      background: "#6D4C41", // Hover background color
-                    },
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
                   }}
                 >
-                  Learn More
-                </Button>
-              </CardContent>
-            </MotionCard>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {project.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+                <Box sx={{ display: 'flex', justifyContent: 'center', pb: 2 }}>
+                  <Button
+                    variant="contained"
+                    component={Link}
+                    to={project.link}
+                    sx={{
+                      background: "#8D6E63",
+                      "&:hover": {
+                        background: "#6D4C41",
+                      },
+                    }}
+                  >
+                    View Project
+                  </Button>
+                </Box>
+              </Card>
+            </motion.div>
           </Grid>
         ))}
       </Grid>

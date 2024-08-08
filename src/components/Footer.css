@@ -1,24 +1,33 @@
 .footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: #0D47A1; /* Footer Background Color */
-    color: white;
-    padding: 20px;
-  }
-  
-  .footer-logo {
-    border-radius: 50%;
-    width: 100px;
-    height: auto;
-  }
-  
-  .footer a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #0D47A1; /* Footer Background Color */
+  color: white;
+  padding: 20px;
+  text-align: center; /* Ensure text is centered */
+}
+
+.footer-logo {
+  border-radius: 50%; /* Make the logo round */
+  width: 100px; /* Adjust the width of the logo */
+  height: 100px; /* Ensure height matches width for a perfect circle */
+  object-fit: cover; /* Ensure the logo fits well within its dimensions */
+}
+
+.footer a {
+  color: inherit; /* Use the footer color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline links on hover for better visibility */
+}
+
+.footer i {
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.footer .social-media a {
+  margin: 0 0.5rem; /* Space between social media icons */
+}
