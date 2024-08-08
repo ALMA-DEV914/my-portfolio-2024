@@ -42,6 +42,8 @@ const Home = () => {
             background: "#F9F9F9",
             alignItems: "center",
             justifyContent: "center",
+            textAlign: "center",
+            padding: { xs: 2, sm: 4 }, // Responsive padding
           }}
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,15 +53,14 @@ const Home = () => {
             variant="h1"
             color="#4A4A4A"
             sx={{
-              textAlign: "center",
               fontWeight: "bold",
-              fontStyle: "Roboto ",
+              fontSize: { xs: '2rem', sm: '3rem' }, // Responsive font size
             }}
           >
             Welcome to My Portfolio
           </Typography>
-          <br></br>
-          <Typography variant="h5" color="black" align="center">
+          <br />
+          <Typography variant="h5" color="black">
             I am a passionate developer with a knack for creating stunning web
             experiences. Explore my work and get in touch!
           </Typography>

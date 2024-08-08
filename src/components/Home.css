@@ -1,8 +1,13 @@
 .split-container {
   display: flex;
   position: relative;
-  height: calc(100vh - 100px); /* Adjust height to account for the 50px margin on top and bottom */
+  flex-direction: row;
+  height: calc(100vh - 100px); /* Adjust height */
   margin: 50px 0;
+  @media (max-width: 375px) {
+    flex-direction: column;
+    height: auto; /* Allow height to adjust based on content */
+  }
 }
 
 .left-side {
@@ -13,7 +18,10 @@
   align-items: center;
   justify-content: center;
   color: white;
-  
+  /* Optional: adjust width on smaller screens */
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .right-side {
@@ -25,7 +33,15 @@
   justify-content: center;
   color: black;
   padding: 20px;
-}
-.profile-image{
+  /* Optional: adjust width on smaller screens */
+  @media (max-width: 768px) {
     width: 100%;
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+.profile-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed container width */
 }
