@@ -1,19 +1,22 @@
-import React from 'react';
-import { Container, Typography, Box, Button } from '@mui/material';
-import { motion } from 'framer-motion';
-import './Home.css'; // Import the CSS file for custom styles
+import React from "react";
+import { Container, Typography, Box, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import "./Home.css"; // Import the CSS file for custom styles
 import image1 from "../assets/computer.jpg";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const MotionBox = motion(Box);
 
 const Home = () => {
   return (
-    <Container maxWidth="xl" sx={{ position: 'relative', overflow: 'hidden', height: '100vh' }}>
+    <Container
+      maxWidth="xl"
+      sx={{ position: "relative", overflow: "hidden", height: "100vh" }}
+    >
       <Box className="split-container">
         <MotionBox
           className="left-side"
-          sx={{ position: 'relative', height: '100%',background:'#F4F1E6'  }}
+          sx={{ position: "relative", height: "100%", background: "#F4F1E6" }}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -26,36 +29,44 @@ const Home = () => {
               className="profile-image"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
           </Box>
-          
         </MotionBox>
         <MotionBox
           className="right-side"
-          sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: "#F9F9F9", alignItems: 'center', justifyContent: 'center' }}
+          sx={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            background: "#F9F9F9",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <Typography 
-  variant="h1" 
-  color="#4A4A4A" 
-  sx={{ 
-    textAlign: 'center', 
-    fontWeight: 'bold', 
-    fontStyle: 'Roboto ' 
-  }}
->
-  Welcome to My Portfolio
-</Typography><br></br>
+          <Typography
+            variant="h1"
+            color="#4A4A4A"
+            sx={{
+              textAlign: "center",
+              fontWeight: "bold",
+              fontStyle: "Roboto ",
+            }}
+          >
+            Welcome to My Portfolio
+          </Typography>
+          <br></br>
           <Typography variant="h5" color="black" align="center">
-            I am a passionate developer with a knack for creating stunning web experiences. Explore my work and get in touch!
+            I am a passionate developer with a knack for creating stunning web
+            experiences. Explore my work and get in touch!
           </Typography>
           <Button
             variant="contained"
             size="large"
-            sx={{ mt: 2, background: '#8D6E63' }}
+            sx={{ mt: 2, background: "#8D6E63" }}
             component={Link}
             to="/contact"
           >
