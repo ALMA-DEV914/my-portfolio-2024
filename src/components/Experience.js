@@ -30,6 +30,12 @@ const experiences = [
     date: "Oct 2022 - Jan 2023",
   },
   {
+    title: "Housekeeper - Southwest Employment Agency Singapore",
+    description:
+      "Responsible for maintaining high standards of cleanliness and organization within assigned residential or commercial properties. My role involved performing a variety of tasks, including dusting, vacuuming, mopping, and sanitizing different areas to ensure a pristine environment. I managed household chores such as laundry, ironing, and meal preparation, tailored to the specific needs and preferences of clients. Attention to detail, reliability, and efficiency were key aspects of my job, as I consistently ensured that all tasks were completed to the highest standards. My role required strong organizational skills, a proactive approach to problem-solving, and the ability to manage time effectively to meet client expectations.",
+    date: "August 2012 - April 2021",
+  },
+  {
     title: "Bookkeeper - Southwest Employment Agency Singapore",
     description:
       "Responsible for recording and maintaining the company's daily financial transactions. Prepare reports for the company owner and trial balances. Introduced and implemented an online bookkeeping system that resulted in accurate and timely accounts records management. Balanced a particularly complicated balance sheet that had one entry missing and was in a state of limbo for three months. Reduced overhead costs by $4000 per month by suggesting the use of alternative energy during peak office hours. Stayed under budget for 15 months by ensuring that petty cash disbursement was minimized.",
@@ -38,7 +44,7 @@ const experiences = [
   {
     title: "City Treasurer - Dingalan, Aurora Philippines",
     description:
-      "Oversaw all financial transactions and fundraising efforts going in or out of an organizing committee. Responsibilities in cash management, liquidity projections, treasury operations, bank relationship management, cash accounting, budget planning, financial reporting, record-keeping, and managing incoming and outgoing funds. Created the most effective, efficient, and accountable administration of all financial and tax collection activities for the city taxpayers. Continue the process of development and improvement of property records that are made easily accessible to other County departments, the general public, and professionals who have a need for the information contained within the treasurer's office.",
+      "Oversaw all financial transactions and fundraising efforts going in or out of an organizing committee. Responsibilities in cash management, liquidity projections, treasury operations, bank relationship management, cash accounting, budget planning, financial reporting, record-keeping, and managing incoming and outgoing funds. Created the most effective, efficient, and accountable administration of all financial and tax collection activities for the city taxpayers. Continued the process of development and improvement of property records that are made easily accessible to other County departments, the general public, and professionals who have a need for the information contained within the treasurer's office.",
     date: "April 2009 - July 2012",
   },
 ];
@@ -50,35 +56,79 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   boxShadow: theme.shadows[1],
   marginBottom: theme.spacing(2),
   position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  '@media (max-width: 600px)': {
+    padding: theme.spacing(1),
+    fontSize: '0.875rem',
+    marginBottom: theme.spacing(1),
+    '&::before': {
+      content: 'attr(data-date)',
+      position: 'absolute',
+      top: '-30px', // Position circle above the content
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '50px',
+      height: '50px',
+      backgroundColor: theme.palette.secondary.main,
+      color: '#fff',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '0.6rem',
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    '&::after': {
+      display: 'none', // Hide the arrow on mobile
+    },
+    '@media (max-width: 600px)': {
+    padding: theme.spacing(1),
+    fontSize: '0.875rem',
+    marginBottom: theme.spacing(1),
+    '&::before': {
+      left: '-40px',
+      width: '50px',
+      height: '50px',
+      fontSize: '0.6rem',
+    },
+    '&::after': {
+      left: '-12px',
+      borderWidth: '6px 12px 6px 0',
+    },
+  },
+  },
   '&::before': {
-    content: 'attr(data-date)', // Use data attribute to insert date
+    content: 'attr(data-date)',
     position: 'absolute',
-    left: '-100px', // Position the circle on the left of the content
+    left: '-70px',
     top: '50%',
     transform: 'translateY(-50%)',
-    width: '80px',
-    height: '80px',
+    width: '60px',
+    height: '60px',
     backgroundColor: theme.palette.secondary.main,
     color: '#fff',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '0.8rem',
+    fontSize: '0.65rem',
     fontWeight: 'bold',
     textAlign: 'center',
   },
   '&::after': {
     content: '""',
     position: 'absolute',
-    left: '-20px', // Adjust for proper positioning of the arrow
+    left: '-16px',
     top: '50%',
     transform: 'translateY(-50%) rotate(180deg)',
     width: 0,
     height: 0,
     borderStyle: 'solid',
-    borderWidth: '10px 20px 10px 0', // Arrow size
-    borderColor: `transparent ${theme.palette.secondary.main} transparent transparent`, // Arrow color
+    borderWidth: '8px 16px 8px 0',
+    borderColor: `transparent ${theme.palette.secondary.main} transparent transparent`,
   },
 }));
 
@@ -89,7 +139,7 @@ const Experience = () => {
         variant="h1"
         sx={{
           fontWeight: "bold",
-          fontSize: { xs: "2rem", sm: "3rem" },
+          fontSize: { xs: "2rem", sm: "2.5rem" },
           mb: 4,
           textAlign: "center",
         }}
@@ -106,10 +156,10 @@ const Experience = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              data-date={experience.date} // Pass the date as a data attribute
+              data-date={experience.date}
             >
-              <Box sx={{ background: "#F9F9F9", padding: "5px" }}>
-                <Typography variant="h5" component="div" sx={{ mb: 1 }}>
+              <Box sx={{ background: "#F9F9F9", padding: "10px", width: '100%' }}>
+                <Typography variant="h6" component="div" sx={{ mb: 1 }}>
                   {experience.title}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
