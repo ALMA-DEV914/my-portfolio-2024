@@ -3,27 +3,56 @@ import { Container, Typography, TextField, Button, Box } from "@mui/material";
 import { ReactComponent as MemeSVG } from "../assets/meme2.svg";
 import { motion } from "framer-motion";
 
+const MAILCHIMP_URL = process.env.REACT_APP_MAILCHIMP_URL;
+const MAILCHIMP_API_KEY = process.env.REACT_APP_MAILCHIMP_API_KEY;
+
 const Contact = () => {
   // State variables for form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
 
   // Handler for form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    // You can add your form submission logic here (e.g., sending data to a backend or API)
-    console.log("Form submitted:", { name, email, message });
+    // Prepare data for Mailchimp
+    const data = {
+      email_address: email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME: name,
+        MESSAGE: message,
+      },
+    };
 
-    // Reset form fields after submission
-    setName("");
-    setEmail("");
-    setMessage("");
-    setFormSubmitted(true);
+    try {
+      const response = await fetch(MAILCHIMP_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
+        },
+        body: JSON.stringify(data),
+      });
 
-    // Optionally, you can also handle success/failure messages here
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Reset form fields after submission
+      setName("");
+      setEmail("");
+      setMessage("");
+      setFormSubmitted(true);
+      setFormError("");
+
+      // Optionally, you can also handle success/failure messages here
+    } catch (error) {
+      setFormError("There was an error submitting your message. Please try again.");
+    }
   };
 
   return (
@@ -137,6 +166,21 @@ const Contact = () => {
           }}
         >
           Thank you! Your message has been sent.
+        </Typography>
+      )}
+
+      {/* Error message */}
+      {formError && (
+        <Typography
+          variant="body1"
+          color="error.main"
+          sx={{
+            mt: 2,
+            textAlign: "center",
+            fontSize: "1.2rem",
+          }}
+        >
+          {formError}
         </Typography>
       )}
 
