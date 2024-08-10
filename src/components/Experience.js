@@ -6,7 +6,6 @@ import {
   ListItem,
   Divider,
   Box,
-
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
@@ -40,7 +39,7 @@ const experiences = [
     title: "City Treasurer - Dingalan, Aurora Philippines",
     description:
       "Oversaw all financial transactions and fundraising efforts going in or out of an organizing committee. Responsibilities in cash management, liquidity projections, treasury operations, bank relationship management, cash accounting, budget planning, financial reporting, record-keeping, and managing incoming and outgoing funds. Created the most effective, efficient, and accountable administration of all financial and tax collection activities for the city taxpayers. Continue the process of development and improvement of property records that are made easily accessible to other County departments, the general public, and professionals who have a need for the information contained within the treasurer's office.",
-    date: " April 2009 - July 2012",
+    date: "April 2009 - July 2012",
   },
 ];
 
@@ -52,16 +51,34 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   position: 'relative',
   '&::before': {
+    content: 'attr(data-date)', // Use data attribute to insert date
+    position: 'absolute',
+    left: '-100px', // Position the circle on the left of the content
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: '80px',
+    height: '80px',
+    backgroundColor: theme.palette.secondary.main,
+    color: '#fff',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '0.8rem',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  '&::after': {
     content: '""',
     position: 'absolute',
-    left: '-30px', // Position the arrow on the left of the content
+    left: '-20px', // Adjust for proper positioning of the arrow
     top: '50%',
     transform: 'translateY(-50%) rotate(180deg)',
     width: 0,
     height: 0,
     borderStyle: 'solid',
-    borderWidth: '10px 20px 10px 0', // Arrow size, where 20px is the width of the triangle
-    borderColor: `transparent ${theme.palette.primary.main} transparent transparent`, // Arrow color pointing right
+    borderWidth: '10px 20px 10px 0', // Arrow size
+    borderColor: `transparent ${theme.palette.secondary.main} transparent transparent`, // Arrow color
   },
 }));
 
@@ -89,6 +106,7 @@ const Experience = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
+              data-date={experience.date} // Pass the date as a data attribute
             >
               <Box sx={{ background: "#F9F9F9", padding: "5px" }}>
                 <Typography variant="h5" component="div" sx={{ mb: 1 }}>
@@ -96,13 +114,6 @@ const Experience = () => {
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
                   {experience.description}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  sx={{ mt: 1 }}
-                >
-                  {experience.date}
                 </Typography>
               </Box>
             </StyledListItem>

@@ -5,6 +5,8 @@ import image2 from "../assets/me.png";
 import WavyLine from "../assets/line.svg";
 import "./About.css";
 import SkillsPieChart from "./SkillsPieChart";
+import TypingEffect from "./TypingEffect"; // Import the TypingEffect component
+
 
 const MotionBox = motion(Box);
 
@@ -50,7 +52,10 @@ const About = () => {
         />
         <Box sx={{ background: "#F4F1E6", padding: "15px", flex: 1 }}>
           <Typography variant="h5" paragraph>
-          I am a web developer with extensive experience in building web applications using modern technologies. My passion lies in crafting intuitive and engaging user experiences. I aim to leverage my skills in web development technologies, tools, and project management to address business needs effectively. I am committed to delivering high-quality results and thrive on overcoming challenges throughout the development process.
+          <TypingEffect 
+              text="I am a web developer with extensive experience in building web applications using modern technologies. My passion lies in crafting intuitive and engaging user experiences. I aim to leverage my skills in web development technologies, tools, and project management to address business needs effectively. I am committed to delivering high-quality results and thrive on overcoming challenges throughout the development process."
+              speed={50} // Adjust typing speed
+            />
           </Typography>
         </Box>
       </Box>
