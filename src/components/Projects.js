@@ -15,37 +15,37 @@ const projects = [
     title: 'LOOKBOOK',
     description: "This website is designed to help individuals test their cognitive functions, specifically targeting Alzheimer's patients. It leverages modern web technologies such as React.js for an interactive user interface, Node.js with Express.js for robust backend support, and MongoDB with Mongoose for secure data management. User security is maintained with Bcrypt for password hashing and JWT (jsonwebtoken) for authentication.",
     image: projetc1,
-    link: '/'
+    link: 'https://look-book-act-group42.herokuapp.com/'
   },
   {
     title: 'Ecommerce Site',
     description: 'This eCommerce website is powered by a robust technology stack, including MongoDB for database management, Redux for state management, and React for a dynamic frontend. The backend is built with Node.js and Express, ensuring efficient server-side operations. The app uses Redux to manage state, extract data, and dispatch actions, providing a seamless alternative to the Context API. Styling is handled with CSS, and payments are processed securely via PayPal.',
     image: projetc2,
-    link: '/'
+    link: 'https://e-commerce-shop-ui.onrender.com/'
   },
   {
     title: 'Blog Site',
     description: "This blog website is a dynamic React application designed to enhance users' fitness routines through detailed and accessible information. It integrates a REST API to fetch data from a reliable third-party source, ensuring a wealth of up-to-date and diverse content. The site focuses on a broad range of cardio exercises, offering users a comprehensive collection of workout routines, techniques, and tips. Each exercise entry provides detailed descriptions, benefits, and instructional resources to help users effectively incorporate cardio into their fitness plans.",
     image: projetc3,
-    link: '/'
-  },
-  {
-    title: 'Project Three',
-    description: 'This application provides users with comprehensive details about movies to help them plan their next watch. Built using HTML, CSS, JavaScript, and integrated with third-party APIs, it displays movie ratings and plot summaries. The app utilizes Bootstrap and media queries for responsive design, and Git/GitHub for version control. It is designed to offer users an intuitive interface where they can easily view movie information, including ratings and plot summaries, to make informed decisions about their movie choices.',
-    image: projetc4,
-    link: '/'
+    link: 'https://stirring-mooncake-891335.netlify.app/'
   },
   {
     title: 'Movie Review',
-    description: 'This Weather Dashboard provides users with up-to-date weather information, including the current forecast and a 5-day weather outlook. Built with JavaScript, HTML, and CSS, and utilizing MongoDB, Node packages, and Bootstrap, this application fetches weather data using a third-party API. The Progressive Web App (PWA) features enhance user experience by offering offline capabilities and a responsive design. The dashboard is designed to help users easily access and understand weather conditions to plan their activities effectively.',
+    description: 'This application provides users with comprehensive details about movies to help them plan their next watch. Built using HTML, CSS, JavaScript, and integrated with third-party APIs, it displays movie ratings and plot summaries. The app utilizes Bootstrap and media queries for responsive design, and Git/GitHub for version control. It is designed to offer users an intuitive interface where they can easily view movie information, including ratings and plot summaries, to make informed decisions about their movie choices.',
     image: projetc5,
-    link: '/'
+    link: 'https://alma-dev914.github.io/Front-End-Interactive-User-Interface-/'
+  },
+  {
+    title: 'Weather Dashboard',
+    description: 'This Weather Dashboard provides users with up-to-date weather information, including the current forecast and a 5-day weather outlook. Built with JavaScript, HTML, and CSS, and utilizing MongoDB, Node packages, and Bootstrap, this application fetches weather data using a third-party API. The Progressive Web App (PWA) features enhance user experience by offering offline capabilities and a responsive design. The dashboard is designed to help users easily access and understand weather conditions to plan their activities effectively.',
+    image: projetc4,
+    link: 'https://alma-dev914.github.io/Weather-Dashboard/'
   },
   {
     title: 'Quiz Puzzle',
     description: 'This Quiz Challenge application is built with HTML, JavaScript, and Web API. It leverages local storage to save and retrieve user data, allowing for a seamless quiz experience. The application runs directly in the browser and features dynamically updated HTML and CSS, which are controlled through JavaScript. This ensures an interactive and engaging user experience as users progress through the quiz.',
     image: projetc6,
-    link: '/'
+    link: 'https://alma-dev914.github.io/Brainstorm-Challenge/'
   }
 ];
 
@@ -64,6 +64,12 @@ const Projects = () => {
       >
         My Projects
       </Typography>
+      <Typography variant='h5'  color="#6B8E23" sx={{
+          fontWeight: "bold",
+          fontSize: { xs: "1rem", sm: "1rem" },
+          textAlign: "center",
+          mb: 4
+        }}>You can check my progress while learning the Web Development Program. Live deployment is coming soon due to migration issue.</Typography>
       <Grid container spacing={4}>
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
