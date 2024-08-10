@@ -24,6 +24,7 @@ const Header = () => {
     <AppBar position="static" sx={{ background: '#2C6B58' }}>
       <Container>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link to="/">
           <MotionBox
             component="img"
             src={logo}
@@ -34,6 +35,7 @@ const Header = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           />
+          </Link>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
             <Button component={Link} to="/" color="inherit">
               Home
