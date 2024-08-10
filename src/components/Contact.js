@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Typography, TextField, Button, Box } from "@mui/material";
 import { ReactComponent as MemeSVG } from "../assets/meme2.svg";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   // State variables for form fields
@@ -35,7 +36,7 @@ const Contact = () => {
           gap: 2,
         }}
       >
-        {/* SVG Section */}
+        {/* SVG Section with Animation */}
         <Box
           sx={{
             flex: 1,
@@ -45,7 +46,14 @@ const Contact = () => {
             order: { xs: 1, md: 2 }, // Order the SVG to appear on the right on larger screens
           }}
         >
-          <MemeSVG width="400" height="400" /> {/* Use your SVG component */}
+          <motion.div
+            initial={{ opacity: 0, y: -50 }} // Initial state: invisible and moved up
+            animate={{ opacity: 1, y: 0 }} // Animate to visible and original position
+            exit={{ opacity: 0, y: 50 }} // Exit state: invisible and moved down
+            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }} // Bouncing effect
+          >
+            <MemeSVG width="400" height="400" />
+          </motion.div>
         </Box>
 
         {/* Form Section */}

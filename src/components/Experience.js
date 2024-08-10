@@ -50,6 +50,19 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   boxShadow: theme.shadows[1],
   marginBottom: theme.spacing(2),
+  position: 'relative',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    left: '-30px', // Position the arrow on the left of the content
+    top: '50%',
+    transform: 'translateY(-50%) rotate(180deg)',
+    width: 0,
+    height: 0,
+    borderStyle: 'solid',
+    borderWidth: '10px 20px 10px 0', // Arrow size, where 20px is the width of the triangle
+    borderColor: `transparent ${theme.palette.primary.main} transparent transparent`, // Arrow color pointing right
+  },
 }));
 
 const Experience = () => {
