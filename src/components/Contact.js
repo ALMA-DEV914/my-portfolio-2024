@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Typography, TextField, Button, Box } from "@mui/material";
 import { ReactComponent as MemeSVG } from "../assets/meme2.svg";
 
 const Contact = () => {
+  // State variables for form fields
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  // Handler for form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // You can add your form submission logic here (e.g., sending data to a backend or API)
+    console.log("Form submitted:", { name, email, message });
+
+    // Reset form fields after submission
+    setName("");
+    setEmail("");
+    setMessage("");
+    setFormSubmitted(true);
+
+    // Optionally, you can also handle success/failure messages here
+  };
+
   return (
     <Container maxWidth="md" sx={{ py: 4, mt: "50px", mb: "50px" }}>
       <Box
@@ -20,19 +42,24 @@ const Contact = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            
             order: { xs: 1, md: 2 }, // Order the SVG to appear on the right on larger screens
           }}
         >
           <MemeSVG width="400" height="400" /> {/* Use your SVG component */}
         </Box>
-        
+
         {/* Form Section */}
         <Box
           component="form"
           noValidate
           autoComplete="off"
-          sx={{ flex: 2, order: { xs: 2, md: 1,background: "#F9F9F9", padding:"15px" } }}
+          onSubmit={handleSubmit} // Add form submission handler
+          sx={{
+            flex: 2,
+            order: { xs: 2, md: 1 },
+            background: "#F9F9F9",
+            padding: "15px",
+          }}
         >
           <Typography
             variant="h1"
@@ -52,12 +79,16 @@ const Contact = () => {
             label="Name"
             margin="normal"
             variant="outlined"
+            value={name} // Bind input value to state
+            onChange={(e) => setName(e.target.value)} // Update state on change
           />
           <TextField
             fullWidth
             label="Email"
             margin="normal"
             variant="outlined"
+            value={email} // Bind input value to state
+            onChange={(e) => setEmail(e.target.value)} // Update state on change
           />
           <TextField
             fullWidth
@@ -66,8 +97,11 @@ const Contact = () => {
             variant="outlined"
             multiline
             rows={4}
+            value={message} // Bind input value to state
+            onChange={(e) => setMessage(e.target.value)} // Update state on change
           />
           <Button
+            type="submit" // Set button type to submit
             variant="contained"
             color="primary"
             sx={{
@@ -82,6 +116,34 @@ const Contact = () => {
           </Button>
         </Box>
       </Box>
+
+      {/* Success message */}
+      {formSubmitted && (
+        <Typography
+          variant="body1"
+          color="success.main"
+          sx={{
+            mt: 2,
+            textAlign: "center",
+            fontSize: "1.2rem",
+          }}
+        >
+          Thank you! Your message has been sent.
+        </Typography>
+      )}
+
+      {/* Message Section */}
+      <Typography
+        variant="body1"
+        color="#4A4A4A"
+        sx={{
+          mt: 4, // Margin top to create space above the message
+          textAlign: "center", // Center align the text
+          fontSize: "1.2rem", // Slightly larger font for readability
+        }}
+      >
+        Have a project in mind or just want to say hello? I'd love to hear from you! Reach out and let's connect.
+      </Typography>
     </Container>
   );
 };
