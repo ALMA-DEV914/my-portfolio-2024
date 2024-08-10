@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: 'Blog Site',
-    description: 'This blog website is a React application that leverages a REST API to fetch data from a third-party API source. It features a variety of cardio exercises, providing users with comprehensive information and resources for their fitness routines.',
+    description: "This blog website is a dynamic React application designed to enhance users' fitness routines through detailed and accessible information. It integrates a REST API to fetch data from a reliable third-party source, ensuring a wealth of up-to-date and diverse content. The site focuses on a broad range of cardio exercises, offering users a comprehensive collection of workout routines, techniques, and tips. Each exercise entry provides detailed descriptions, benefits, and instructional resources to help users effectively incorporate cardio into their fitness plans.",
     image: projetc3,
     link: '/'
   },
@@ -63,7 +63,7 @@ const Projects = () => {
         }}
       >
         My Projects
-      </Typography><br></br>
+      </Typography>
       <Grid container spacing={4}>
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -71,19 +71,22 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              
             >
               <Card
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '600px', // Ensures card takes full height of its container
-                  maxHeight: '600px', // Optional: set a maximum height to prevent excessive card height
+                  height: '540px', // Make sure the card stretches to fill its container
+                  width: '100%'  // Ensure the card takes full width of its container
                 }}
               >
                 <CardMedia
                   component="img"
-                  height="100%"
+                  sx={{
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'cover'
+                  }}
                   image={project.image}
                   alt={project.title}
                 />
